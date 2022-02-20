@@ -1,28 +1,21 @@
-// [] Represents a single image in the gallery with the ability to click the image to
-//     toggle between the image and description 
-// [] As well as the ability to like an image
-
-//==========<>=========================================
-//--<End  >---------------------------------------------
-
 //==========<IMPORTS>=========================================
 import {useState} from 'react';
+import {Container, Row, Col, CardColumns} from 'react-bootstrap';
 
 //--<End IMPORTS>-------------------------------------
 
 // ==========<GalleryItem FUNCTION>=====================================================
-// Using data and imgId as props
+    // * Using data and imgId as props
 function GalleryItem({data, imgId}) {
-    console.log('The data prop and imgId prop in GalleryItem are:', data, imgId);
     
  // ==========<STATE VARIABLES>======================================
- // Initially declared showAnimal to be true
+     // * Initially declared showAnimal to be true
     const [showAnimal, setShowAnimal] = useState(true);
 
     //--<End STATE VARIABLES>------------------------------
 
  // ==========<CONDITIONAL RENDERING FUNCTIONS>=========================================
- // Function to change the value of showAnimal when an image is clicked
+     // * Function to change the value of showAnimal when an image is clicked
     const handleClick = () => {
         console.log('The animal is:', data.altText);
         setShowAnimal(!showAnimal);
@@ -31,7 +24,7 @@ function GalleryItem({data, imgId}) {
 
  //--<End CONDITIONAL RENDERING FUNCTIONS>---------------------------------------------
 
- // Console.log to see if showAnimal is switching between true/false
+     // * Console.log to see if showAnimal is switching between true/false
     console.log('The status of showAnimal is:', showAnimal);
 
  // ==========<RETURN>=====================================================
@@ -39,15 +32,24 @@ function GalleryItem({data, imgId}) {
         <>
         {/* CONDITION RENDERING */}
             {showAnimal ?
-                // ANIMAL IS SHOWING
-                <div className='display' onClick={handleClick}>
-                    <img className='animalImage' src={data.path} alt={data.altText}/>
-                </div>
-                :
-                // DESCRIPTION IS SHOWING
-                <div className='display' onClick={handleClick}>
-                    <p className='animalDescription'>{data.description}</p>
-                </div>
+                // * ANIMAL IS SHOWING
+                <Col className='card'>
+
+                    <div className='displaysImg' onClick={handleClick}>
+                        <img className='animalImage' src={data.path} alt={data.altText}/>
+                    </div>
+
+                </Col>:
+
+                // * DESCRIPTION IS SHOWING
+                <Col className='card'>
+
+                    <div onClick={handleClick}>
+                        {/* <p className='animalName'>{data.altText}</p> */}
+                        <p className='animalDescription'>{data.description}</p>
+                    </div>
+
+                </Col>
             }
         </>
 

@@ -1,11 +1,6 @@
-// Represents the gallery of images. By componentizing, 
-// we could reuse this component in different applications
-
-//==========<>=========================================
-//--<End  >---------------------------------------------
-
 //==========<IMPORTS>=========================================
 import GalleryItem from "../GalleryItem/GalleryItem";
+import {Container, Row} from 'react-bootstrap';
 
 //--<End IMPORTS>-------------------------------------
 
@@ -17,8 +12,8 @@ function GalleryList ({galleryList}) {
  // ==========<RETURN>=====================================================
     return(
         <>
-            <div>
-                <ul>
+            <Container>
+                <Row>
                     {galleryList.map(imgObject => (
                         <GalleryItem
                             key={imgObject.id}
@@ -26,8 +21,8 @@ function GalleryList ({galleryList}) {
                             data={imgObject}
                         />
                     ))}
-                </ul>
-            </div>
+                </Row>
+            </Container>
         </>
     ) //--<End RETURN>---------------------------------------------
 
