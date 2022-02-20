@@ -34,15 +34,21 @@ function GalleryItem({data, imgId}) {
             {showAnimal ?
                 // * ANIMAL IS SHOWING
                 <Col className='card'>
-                    <div className='display' onClick={handleClick}>
+
+                    <div className='displaysImg' onClick={handleClick}>
                         <img className='animalImage' src={data.path} alt={data.altText}/>
                     </div>
+
                 </Col>:
+
                 // * DESCRIPTION IS SHOWING
                 <Col className='card'>
-                    <div className='display' onClick={handleClick}>
+
+                    <div onClick={handleClick}>
+                        {/* <p className='animalName'>{data.altText}</p> */}
                         <p className='animalDescription'>{data.description}</p>
                     </div>
+
                 </Col>
             }
         </>
