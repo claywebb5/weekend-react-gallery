@@ -1,6 +1,6 @@
 //==========<IMPORTS>=========================================
 import {useState} from 'react';
-import {Col, Button} from 'react-bootstrap';
+import {Card, Col, Button} from 'react-bootstrap';
 
 
 // ==========<GalleryItem FUNCTION>=====================================================
@@ -40,26 +40,47 @@ function GalleryItem({data, imgId, setLikeCount}) {
         {/* CONDITION RENDERING */}
             {showAnimal ?
                 // * ANIMAL IS SHOWING
-                <Col className='card'>
-                    <div className='displaysImg' onClick={handleClick}>
-                        <img className='animalImage' src={data.path} alt={data.altText}/>
-                    </div>
-                    {/* LIKE COUNT */}
-                    <p className="likeCount">Liked by {numOfLikes}</p>
-                    {/* BUTTON */}
-                    <Button id={imgId} onClick={likeClickHandler}>Like</Button>
-                </Col>:
+                <Card className="img-card">
+                    <Col className='card'>
+                        <div className='displaysImg' onClick={handleClick}>
+                            <img className='animalImage' src={data.path} className="img-fluid" alt={data.altText}/>
+                        </div>
+                        
+                        
+                        {/* BUTTON */}
+                        <Button id={imgId} onClick={likeClickHandler}>Like</Button>
+                        
+                        <div className="title-likes">
+                            {/* IMAGE NAME */}
+                            <p className="card-title">{data.altText}</p>
+
+                            {/* LIKE COUNT */}
+                            <p className="likeCount">Liked by {numOfLikes}</p>
+                        </div>
+                    </Col>
+                </Card> :
                 // * DESCRIPTION IS SHOWING
-                <Col className='card'>
-                    <div onClick={handleClick}>
-                        {/* <p className='animalName'>{data.altText}</p> */}
-                        <p className='animalDescription'>{data.description}</p>
-                    </div>
-                    {/* LIKE COUNT */}
-                    <p className='likeCount'>Liked by {numOfLikes}</p>
-                    {/* BUTTON */}
-                    <Button onClick={likeClickHandler}>Like</Button>
-                </Col>
+                <Card className="desc-card">
+                    <Col className='card'>
+                        <div className="displaysDesc" onClick={handleClick}>
+                            {/* <p className='animalName'>{data.altText}</p> */}
+                            <p className='animalDescription'>{data.description}</p>
+                        </div>
+
+                        
+                        {/* BUTTON */}
+                        <Button id={imgId} onClick={likeClickHandler}>Like</Button>
+                       
+
+                        <div className="title-likes">
+                            {/* IMAGE NAME */}
+                            <p className="card-title">{data.altText}</p>
+
+                            {/* LIKE COUNT */}
+                            <p className='likeCount'>Liked by {numOfLikes}</p>
+                        </div>
+                    </Col>
+                </Card>
             }
         </>
 
