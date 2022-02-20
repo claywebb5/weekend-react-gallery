@@ -2,21 +2,51 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(to right, #5a3f37, #2c7744);
+  /* background: linear-gradient(to right, #5a3f37, #2c7744); */
 }
 
+/* HEADER OF PAGE  */
 .App-header {
   background-image: linear-gradient(to right, #434343 0%, black 90%);
 }
 
-.img-card, .desc-card {
+/* FOR THE NAME OF THE ANIMAL DISPLAYED */
+.card-title {
   padding: 0;
+  margin: 0;
+  background-color: aqua;
 }
 
-.animalImage {
+/* FOR THE LIKE COUNT BACKGROUND */
+.likeCount {
+  padding: 0;
+  margin: 0;
+  background-color: bisque;
+}
+
+
+/* THE CARDS FOR BOTH IMG AND DESC  */
+.img-card, .desc-card {
+  padding: 0;
+  margin-bottom: 8px;
+
+}
+
+/* BACKGROUND OF IMG DIV  */
+.displaysImg {
+  background-color: #434343;
+}
+
+/* BACKGROUND OF DESC DIV  */
+.displaysDesc {
+  background-color: #5a3f37;
+}
+
+
+/* .animalImage {
   width: 100%;
   height: 100%;
-}
+} */
 
 
 .animalImage, .animalDescription, .displaysImg {
@@ -24,14 +54,16 @@ body {
   object-fit: cover;
   height: 150px;
   padding: 0;
+  margin: 0;
 }
 
+/* FOR THE COL  */
 .card {
   border: 1px solid black;
   font-family: Futura, Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  /* font-size: 24px; */
   word-wrap: break-word;
-  background-color: #fff;
+  /* PUT SAME BACKGROUND COLOR AS BODY  */
   background-clip: border-box;
 }
 

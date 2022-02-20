@@ -54,16 +54,16 @@ function GalleryItem({data, imgId, setLikeCount}) {
 
                         {/* LIKE COUNT */}
                         <p className="likeCount">Liked by {numOfLikes}</p>
-                    </Col>:
+                    </Col>
                 </Card> :
                 // * DESCRIPTION IS SHOWING
                 <Card className="desc-card">
                     <Col className='card'>
-                        <div onClick={handleClick}>
+                        <div className="displaysDesc" onClick={handleClick}>
                             {/* <p className='animalName'>{data.altText}</p> */}
                             <p className='animalDescription'>{data.description}</p>
                         </div>
-                    
+
                         {/* BUTTON */}
                         <Button id={imgId} onClick={likeClickHandler}>Like</Button>
 
