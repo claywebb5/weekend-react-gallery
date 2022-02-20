@@ -5,8 +5,7 @@ const galleryItems = [
     { id: 4, path: 'images/ducks.jpg', description: 'Photo of a group of Ducks landing in a Western Minnesota pond.', likes: 0 },
     { id: 5, path: 'images/elk.jpg', description: 'Photo of a Bull Elk taken in the mountains of Wyoming', likes: 0 },
     { id: 6, path: 'images/turkeys.jpg', description: 'Photo of a group of strutting Turkeys taken in southern Minnesota', likes: 0 }
-
-
 ];
 
+// Exports galleryItems array of object to gallery.router.js 
 module.exports = galleryItems;

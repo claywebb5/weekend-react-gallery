@@ -18,6 +18,8 @@ router.put('/like/:id', (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
+    // The GET is sending a response(res) of the 
+    // galleryItems array back to App.jsx 
     res.send(galleryItems);
 }); // END GET Route
 
