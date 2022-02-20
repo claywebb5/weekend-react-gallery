@@ -2,8 +2,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 import {Container, Row} from 'react-bootstrap';
 
-//--<End IMPORTS>-------------------------------------
-
 
 // ==========<GalleryList FUNCTION>=====================================================
 function GalleryList ({galleryList, addLike}) {

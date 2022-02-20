@@ -2,19 +2,15 @@
 import {useState} from 'react';
 import {Col, Button} from 'react-bootstrap';
 
-//--<End IMPORTS>-------------------------------------
 
 // ==========<GalleryItem FUNCTION>=====================================================
-    // * Using data and imgId as props
 function GalleryItem({data, imgId, setLikeCount}) {
     
  // ==========<STATE VARIABLES>======================================
      // * Initially declared showAnimal to be true
     const [showAnimal, setShowAnimal] = useState(true);
-
      // * Initially declared numOfLikes to be 0
     const [numOfLikes, setNumOfLikes] = useState(0);
-
     //--<End STATE VARIABLES>------------------------------
 
  // ==========<CONDITIONAL RENDERING FUNCTIONS>=========================================
@@ -22,7 +18,7 @@ function GalleryItem({data, imgId, setLikeCount}) {
     const handleClick = () => {
         console.log('The animal is:', data.altText);
         setShowAnimal(!showAnimal);
-    }
+    } // End
 
     const likeClickHandler = (event) => {
         // * Log to check that the correct image is being targeted
@@ -30,18 +26,13 @@ function GalleryItem({data, imgId, setLikeCount}) {
         let newLike = {
             id: event.target.id,
             count: numOfLikes + 1
-        }
+        } // End
         // Update the count when the button is clicked
         setNumOfLikes(numOfLikes + 1);
         setLikeCount(newLike);
-
-    }
-
+    } // End
 
  //--<End CONDITIONAL RENDERING FUNCTIONS>---------------------------------------------
-
-     // * Console.log to see if showAnimal is switching between true/false
-    console.log('The status of showAnimal is:', showAnimal);
 
  // ==========<RETURN>=====================================================
     return(
