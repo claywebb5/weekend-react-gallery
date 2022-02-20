@@ -46,14 +46,17 @@ function GalleryItem({data, imgId, setLikeCount}) {
                             <img className='animalImage' src={data.path} className="img-fluid" alt={data.altText}/>
                         </div>
                         
+                        
                         {/* BUTTON */}
                         <Button id={imgId} onClick={likeClickHandler}>Like</Button>
+                        
+                        <div className="title-likes">
+                            {/* IMAGE NAME */}
+                            <p className="card-title">{data.altText}</p>
 
-                        {/* IMAGE NAME */}
-                        <p className="card-title">{data.altText}</p>
-
-                        {/* LIKE COUNT */}
-                        <p className="likeCount">Liked by {numOfLikes}</p>
+                            {/* LIKE COUNT */}
+                            <p className="likeCount">Liked by {numOfLikes}</p>
+                        </div>
                     </Col>
                 </Card> :
                 // * DESCRIPTION IS SHOWING
@@ -64,11 +67,18 @@ function GalleryItem({data, imgId, setLikeCount}) {
                             <p className='animalDescription'>{data.description}</p>
                         </div>
 
+                        
                         {/* BUTTON */}
                         <Button id={imgId} onClick={likeClickHandler}>Like</Button>
+                       
 
-                        {/* LIKE COUNT */}
-                        <p className='likeCount'>Liked by {numOfLikes}</p>
+                        <div className="title-likes">
+                            {/* IMAGE NAME */}
+                            <p className="card-title">{data.altText}</p>
+
+                            {/* LIKE COUNT */}
+                            <p className='likeCount'>Liked by {numOfLikes}</p>
+                        </div>
                     </Col>
                 </Card>
             }
