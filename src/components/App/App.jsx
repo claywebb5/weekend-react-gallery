@@ -17,11 +17,10 @@ const [galleryList, setGalleryList] = useState([])
 // ==========<GET>==================================================
 // create a function to GET the galleryItems
 const fetchGallery = () => {
-  console.log('In fetchGallery (GET)');
   // Use axios to GET
   axios.get('/gallery')
   .then((response) => {
-    console.log('This is the GET response data:', response.data);
+    // console.log('This is the GET response data:', response.data);
     // set the response.date into state variable galleryItems
     setGalleryList(response.data);
   }).catch((error) => {
