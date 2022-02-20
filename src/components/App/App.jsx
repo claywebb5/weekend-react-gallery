@@ -29,6 +29,21 @@ const fetchGallery = () => {
   })
 } // End GET ---------------------------------------------
 
+// ==========<PUT>==================================================
+const updateLike = (newLike) => {
+  axios.put(`/gallery/like/` + newLike.id, {likes: newLike.count + 1})
+  .then(response => {
+    console.log('PUT on App.jsx Works!!! response is:', response);
+    fetchGallery();
+  }).catch((error) => {
+    console.log('PUT on App.jsx error:', error);
+  })
+}
+
+
+
+// End PUT ---------------------------------------------
+
 // ==========<RUN FETCH ON PAGE LOAD>=========================================
 // useEffect will run fetchGallery on page load
 useEffect(() => {
@@ -50,6 +65,7 @@ useEffect(() => {
         <p>Gallery goes here</p>
         <GalleryList
           galleryList={galleryList}
+          addLike={updateLike}
         />
         
         
