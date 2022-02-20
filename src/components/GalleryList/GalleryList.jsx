@@ -6,7 +6,7 @@ import {Container, Row} from 'react-bootstrap';
 
 
 // ==========<GalleryList FUNCTION>=====================================================
-function GalleryList ({galleryList}) {
+function GalleryList ({galleryList, addLike}) {
 
 
  // ==========<RETURN>=====================================================
@@ -19,6 +19,7 @@ function GalleryList ({galleryList}) {
                             key={imgObject.id}
                             imgId={imgObject.id}
                             data={imgObject}
+                            setLikeCount={addLike}
                         />
                     ))}
                 </Row>
